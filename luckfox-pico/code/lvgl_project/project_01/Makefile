@@ -1,7 +1,7 @@
 #
 # Makefile
 #
-CC ?= /home/hxzp/luckfox/luckfox-pico/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc
+CC = /home/hxzp/luckfox/luckfox-pico/tools/linux/toolchain/arm-rockchip830-linux-uclibcgnueabihf/bin/arm-rockchip830-linux-uclibcgnueabihf-gcc
 LVGL_DIR_NAME   ?= lvgl
 LVGL_DIR        ?= .
 
@@ -55,7 +55,7 @@ default: $(TARGET)
 	$(CC) -o $(BUILD_BIN_DIR)/$(BIN) $(TARGET) $(LDFLAGS)
 
 clean: 
-	rm -rf $(BUILD_DIR)
+	rm -rf $(BUILD_OBJ_DIR)/$(OBJS)
 
 install:
 	install -d $(DESTDIR)$(bindir)

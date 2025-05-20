@@ -1,5 +1,6 @@
+#if 1
 #include "lvgl/lvgl.h"
-#include "lv_demos/lv_demo.h"
+// #include "lv_demos/lv_demo.h"
 #include "lv_drivers/display/fbdev.h"
 // #include "lv_drivers/indev/evdev.h"
 #include <unistd.h>
@@ -35,21 +36,21 @@ int main(void)
     disp_drv.ver_res    = 135;
     lv_disp_drv_register(&disp_drv);
 
-    // lv_obj_t *scr = lv_disp_get_scr_act(NULL); // 获取当前活跃的屏幕对象
-    // // 创建一个基础对象（用作黑色正方形）
-    // lv_obj_t *square = lv_obj_create(scr);
-    // // 设置正方形大小（宽度和高度相同）
-    // lv_obj_set_size(square, 100, 100); // 100x100 像素
-    // // 移除默认的边框和阴影（可选）
-    // lv_obj_set_style_border_width(square, 0, LV_PART_MAIN); // 边框宽度设为 0
-    // lv_obj_set_style_shadow_width(square, 0, LV_PART_MAIN); // 阴影宽度设为 0
-    // // 设置背景颜色为纯黑
-    // lv_obj_set_style_bg_color(square, lv_color_black(), LV_PART_MAIN);
-    // lv_obj_set_style_bg_opa(square, LV_OPA_50, LV_PART_MAIN); // 不透明度 100%
-    // // 居中显示
-    // lv_obj_center(square);    
+    lv_obj_t *scr = lv_disp_get_scr_act(NULL); // 获取当前活跃的屏幕对象
+    // 创建一个基础对象（用作黑色正方形）
+    lv_obj_t *square = lv_obj_create(scr);
+    // 设置正方形大小（宽度和高度相同）
+    lv_obj_set_size(square, 100, 100); // 100x100 像素
+    // 移除默认的边框和阴影（可选）
+    lv_obj_set_style_border_width(square, 0, LV_PART_MAIN); // 边框宽度设为 0
+    lv_obj_set_style_shadow_width(square, 0, LV_PART_MAIN); // 阴影宽度设为 0
+    // 设置背景颜色为纯黑
+    lv_obj_set_style_bg_color(square, lv_color_black(), LV_PART_MAIN);
+    lv_obj_set_style_bg_opa(square, LV_OPA_50, LV_PART_MAIN); // 不透明度 100%
+    // 居中显示
+    lv_obj_center(square);    
 
-    lv_demo_widgets();
+//    lv_demo_widgets();
 
     /*Handle LitlevGL tasks (tickless mode)*/
     while(1) {
@@ -78,3 +79,12 @@ uint32_t custom_tick_get(void)
     uint32_t time_ms = now_ms - start_ms;
     return time_ms;
 }
+#endif
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+//     printf("hello");
+//     return 0;
+// }
